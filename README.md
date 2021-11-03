@@ -1,6 +1,8 @@
 # v2ray_cli
 V2ray Subscription Command-Line Interface for Linux without GUI
-change to next node within 30 mins,or if a file "/tmp/proxy_nextnode" is found
+# new feature
+automatic change to next node after 30 mins,or if a file "/tmp/proxy_nextnode" is found
+
 # How to use
 0. Install [python3](https://pythonguidecn.readthedocs.io/zh/latest/starting/install3/linux.html)
 1. Install [v2ray](https://www.v2ray.com/chapter_00/install.html)
