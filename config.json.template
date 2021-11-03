@@ -51,8 +51,9 @@
     },
     "inbounds": [
         {
-            "port": 10809,
+            "port": 1081,
             "protocol": "http",
+            "listen": "127.0.0.1",
             "settings": {
                 "userLevel": 8
             },

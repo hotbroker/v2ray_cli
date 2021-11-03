@@ -12,7 +12,7 @@ class Subscribe(object):
         self.__node = {}    # 订阅的各节点名称
         self.__json_template_pathname = json_template_pathname
         self.__json_conf_pathname = "./config.json"
-        self.update()
+        self.__nodeid = 0
 
     def update(self):
         try:
@@ -47,8 +47,11 @@ class Subscribe(object):
         while (1):
             try:
                 self.show()
-                num = input("Please Enter Node Num:")
-                self.sub2conf(self.__node[num], "vmess")
+                #num = input("Please Enter Node Num:")
+                if self.__nodeid>=len(self.__node):
+                    self.__nodeid=0
+                self.sub2conf(self.__node[str(self.__nodeid)], "vmess")
+                self.__nodeid = self.__nodeid+1
                 break
             except KeyError as e:
                 print("%s: %s" % ("Out Of Node Range", e))
@@ -115,6 +118,6 @@ class Subscribe(object):
         except Exception:
             print("config.json write error")
             return
-
+        print('using', sub)
         os.system("killall v2ray")
-        os.system("/usr/bin/v2ray/v2ray ./config.json &")
+        os.system("/root/v2ray/v2ray ./config.json &")
