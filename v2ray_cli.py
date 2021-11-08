@@ -114,6 +114,8 @@ def start():
             logging.info("find succ node, wait next time update")
 
             go_next()
+        except KeyboardInterrupt:
+            sys.exit(0)
         except:
             strexct = "except {}".format(traceback.format_exc())
             logging.info(strexct)

@@ -56,8 +56,15 @@
             "listen": "127.0.0.1",
             "settings": {
                 "userLevel": 8
-            },
-            "tag": "http"
+            }
+        },{
+            "port": 8001,
+            "protocol": "http",
+            "listen": "127.0.0.1",
+            "settings": {
+                "userLevel": 8
+            }
+			
         }
     ],
     "outbounds": [
